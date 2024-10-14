@@ -128,7 +128,6 @@ export async function getLoggedInUser() {
     const user = await getUserInfo({ userId: result.$id });
 
     return parseStringify(user);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return null;
   }
@@ -139,7 +138,6 @@ export const logoutAccount = async () => {
     const { account } = await createSessionClient();
     cookies().delete("appwrite-session");
     await account.deleteSession("current");
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return null;
   }
