@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import {
   PlaidLinkOnSuccess,
@@ -14,13 +14,16 @@ import Image from "next/image";
 
 const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
   const router = useRouter();
+
   const [token, setToken] = useState("");
 
   useEffect(() => {
     const getLinkToken = async () => {
       const data = await createLinkToken(user);
+
       setToken(data?.linkToken);
     };
+
     getLinkToken();
   }, [user]);
 
@@ -61,11 +64,11 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
         >
           <Image
             src="/icons/connect-bank.svg"
-            alt="Connect bank"
+            alt="connect bank"
             width={24}
             height={24}
           />
-          <p className="hidden text-[16px] font-semibold text-black-2 xl:block">
+          <p className="hiddenl text-[16px] font-semibold text-black-2 xl:block">
             Connect bank
           </p>
         </Button>
@@ -73,7 +76,7 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
         <Button onClick={() => open()} className="plaidlink-default">
           <Image
             src="/icons/connect-bank.svg"
-            alt="Connect bank"
+            alt="connect bank"
             width={24}
             height={24}
           />
