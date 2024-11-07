@@ -5,10 +5,16 @@ import RightSidebar from "@/components/RightSidebar";
 import { getLoggedInUser } from "@/lib/actions/user.actions";
 import { getAccounts, getAccount } from "@/lib/actions/bank.actions";
 import RecentTransactions from "@/components/RecentTransactions";
+import { redirect } from "next/navigation";
 
 const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
   const currentPage = Number(page as string) || 1;
   const loggedIn = await getLoggedInUser();
+
+  if (!loggedIn) {
+    redirect("/sign-in");
+  }
+
   const accounts = await getAccounts({ userId: loggedIn.$id });
 
   if (!accounts) return;
