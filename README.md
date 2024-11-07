@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![Banking App Logo](public/banking.png)
 
-## Getting Started
+# Secure Banking Application
 
-First, run the development server:
+**Banking App** is a modern web application that allows users to securely connect their bank accounts and perform money transfers.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit the live application at: [https://vinesk-banking.vercel.app/](https://vinesk-banking.vercel.app/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Account Management**:
 
-## Learn More
+  - Secure bank account connection via Plaid
+  - Real-time balance and transaction monitoring
+  - Analytics dashboard with charts
+  - Transaction categorization
+  - Multi-bank account support
 
-To learn more about Next.js, take a look at the following resources:
+- **Money Transfers**:
+  - Secure transfers via Dwolla
+  - Beneficiary management
+  - Transfer history
+  - Real-time notifications
+  - Transaction status tracking
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Framework**: Next.js 14  
+**UI Components**: Radix UI, Tailwind CSS  
+**Database**: Appwrite  
+**Banking Services**: Plaid, Dwolla  
+**Analytics**: Chart.js  
+**Error Tracking**: Sentry  
+**Deployment**: Vercel
 
-## Deploy on Vercel
+## Setup
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Frontend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the frontend repo:
+
+   ```bash
+   git clone https://github.com/vinesk/banking.git
+   cd banking
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env.local` file based on the following structure:
+
+   ```bash
+   # Next.js Configuration
+   NEXT_PUBLIC_SITE_URL=your-site-url
+
+   # Appwrite Configuration
+   NEXT_PUBLIC_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
+   NEXT_PUBLIC_APPWRITE_PROJECT=your-project-id
+   APPWRITE_DATABASE_ID=your-database-id
+   APPWRITE_USER_COLLECTION_ID=your-user-collection-id
+   APPWRITE_BANK_COLLECTION_ID=your-bank-collection-id
+   APPWRITE_TRANSACTION_COLLECTION_ID=your-transaction-collection-id
+   NEXT_APPWRITE_KEY=your-appwrite-api-key
+
+   # Plaid Configuration
+   PLAID_CLIENT_ID=your-plaid-client-id
+   PLAID_SECRET=your-plaid-secret
+   PLAID_ENV=sandbox or development or production
+   PLAID_PRODUCTS=auth,transactions
+   PLAID_COUNTRY_CODES=US,CA
+
+   # Dwolla Configuration
+   DWOLLA_KEY=your-dwolla-key
+   DWOLLA_SECRET=your-dwolla-secret
+   DWOLLA_BASE_URL=https://api-sandbox.dwolla.com
+   DWOLLA_ENV=sandbox
+
+   # Sentry Configuration
+   SENTRY_AUTH_TOKEN=your-sentry-auth-token
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Usage
+
+- **Account Connection**: Use Plaid Link to securely connect your bank accounts
+- **Dashboard**: View your balances and transactions with interactive charts
+- **Transfers**: Perform secure money transfers through the Dwolla interface
+- **Analytics**: Track your spending and income with analytical tools
+
+## Security Features
+
+The application implements several security measures:
+
+- Secure authentication via Appwrite
+- Encryption of sensitive data
+- Integration with certified banking services (Plaid & Dwolla)
+- Real-time error monitoring with Sentry
+- Secure environment variable management
+- HTTPS enforcement
+
+## API Integration
+
+- **Plaid**: Used for bank account connection and transaction fetching
+- **Dwolla**: Handles secure money transfers between accounts
+- **Appwrite**: Manages user authentication and data storage
+
+## License
+
+ISC License. See the [LICENSE](./LICENSE) file for details.
