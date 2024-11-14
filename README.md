@@ -1,12 +1,12 @@
-![Banking App Logo](public/banking.png)
+![Horizon Logo](public/horizon.png)
 
-# Secure Banking Application
+# Horizon
 
-**Banking App** is a modern web application that allows users to securely connect their bank accounts and perform money transfers.
+**Horizon** is a modern web application that allows users to securely connect their bank accounts and perform money transfers.
 
 ## Live Demo
 
-Visit the live application at: [https://vinesk-banking.vercel.app/](https://vinesk-banking.vercel.app/)
+Visit the live application at: [https://horizon-vinesk.vercel.app/](https://horizon-vinesk.vercel.app/)
 
 ## Features
 
@@ -42,8 +42,8 @@ Visit the live application at: [https://vinesk-banking.vercel.app/](https://vine
 1. Clone the frontend repo:
 
    ```bash
-   git clone https://github.com/vinesk/banking.git
-   cd banking
+   git clone https://github.com/vinesk/horizon.git
+   cd horizon
    ```
 
 2. Install dependencies:
